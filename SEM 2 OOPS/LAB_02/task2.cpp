@@ -126,4 +126,18 @@ int main()
             cout << endl;
         }   
     }
+
+    for(int i = 0;i < rows1; i++)
+    {
+        delete[] matrix1[i];
+    }
+    delete[] matrix1;
+
+    for(int i = 0;i < rows2; i++)
+    {
+        delete[] matrix2[i];
+    }
+    delete[] matrix2;
+
+    return 0;
 }
