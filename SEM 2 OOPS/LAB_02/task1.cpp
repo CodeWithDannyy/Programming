@@ -17,7 +17,7 @@ int main()
         cin >> arr[i];
     }
 
-    int sum, largest = arr[0];
+    int sum = 0, largest = arr[0];
     float avg;
     for(int i = 0 ; i < size; i++)
     {
