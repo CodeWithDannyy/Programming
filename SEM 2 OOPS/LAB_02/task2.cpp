@@ -111,7 +111,7 @@ int main()
             {
                 for(int k = 0; k < cols1; k++)
                 {
-                    matrixMultiply[i][j] = matrix1[i][k] * matrix2[k][j];
+                    matrixMultiply[i][j] += matrix1[i][k] * matrix2[k][j];
                 }
             }
         }
