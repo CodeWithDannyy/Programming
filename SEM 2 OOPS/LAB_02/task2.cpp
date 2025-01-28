@@ -88,6 +88,42 @@ int main()
     else
     {
         cout << "Matrix addition and subtraction is not possible"<<endl;
-        return 0;
+    }
+
+    if(cols1 != rows2)
+    {
+        cout <<"Matrix Multiplication is not possible"<<endl;
+    }
+    else
+    {
+        int matrixMultiply[rows1][cols2];
+        for(int i = 0; i < rows1; ++i)
+        {
+            for(int j = 0; j < cols2; ++j)
+            {
+                matrixMultiply[i][j] = 0;
+            }
+        }
+
+        for(int i = 0; i < rows1; i++)
+        {
+            for(int j = 0; j < cols2; j++)
+            {
+                for(int k = 0; k < cols1; k++)
+                {
+                    matrixMultiply[i][j] = matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+
+        cout << "\nMatrix Multiplication "<<endl;
+        for(int i = 0; i < rows1; ++i)
+        {
+            for(int j = 0; j < cols2; ++j)
+            {
+                cout << matrixMultiply[i][j] << " ";
+            }
+            cout << endl;
+        }   
     }
 }
