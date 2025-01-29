@@ -27,8 +27,15 @@ int main()
         bool found = false;
         switch (choice)
         {
-            case 1:
-                books = new Book[numOfBooks + 1];
+            case 1: {
+                Book *temp = new Book[numOfBooks+1];
+                for (int i = 0; i < numOfBooks; i++)
+                {
+                    temp[i] = books[i];
+                }
+                delete[] books;
+                books = temp;
+                
                 cout << "Enter Information for Book "<< numOfBooks+1 <<endl ;
             
                 cout << "Enter Book ID : ";
@@ -48,7 +55,7 @@ int main()
 
                 numOfBooks++;
                 break;
-        
+            }        
             case 2:
                 if(numOfBooks == 0)
                 {
