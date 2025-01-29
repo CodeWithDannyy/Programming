@@ -13,7 +13,6 @@ int main()
 {
     Employee *emps;
     emps = new Employee[3];
-    // GAAND MARA ALI RAZA (frend hai)
     for(int i = 0; i < 3; i++)
     {
         cout << "Enter Information for Employee "<<i+1<<endl;
