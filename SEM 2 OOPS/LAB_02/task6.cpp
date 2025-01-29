@@ -35,7 +35,7 @@ int main()
                 }
                 delete[] books;
                 books = temp;
-                
+
                 cout << "Enter Information for Book "<< numOfBooks+1 <<endl ;
             
                 cout << "Enter Book ID : ";
@@ -75,6 +75,12 @@ int main()
                             books[j] = books[j+1];
                         }
                         numOfBooks--;
+
+                        Book *temp = new Book[numOfBooks];
+                        for(int i = 0; i < numOfBooks; i++)
+                            temp[i] = books[i];
+                        delete[] books;
+                        books = temp;
                         cout << "Book Removed "<<endl;
                         break;
                     }
