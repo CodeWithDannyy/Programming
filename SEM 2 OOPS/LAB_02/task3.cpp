@@ -11,9 +11,12 @@ typedef struct
 
 int main()
 {
+    int numOfEmployees;
+    cout << "Enter Number of employees : ";
+    cin >> numOfEmployees;
     Employee *emps;
-    emps = new Employee[3];
-    for(int i = 0; i < 3; i++)
+    emps = new Employee[numOfEmployees];
+    for(int i = 0; i < numOfEmployees; i++)
     {
         cout << "Enter Information for Employee "<<i+1<<endl;
 
@@ -33,7 +36,7 @@ int main()
     }
 
     cout << "\nEmployee Information";
-    for(int i = 0; i < 3; i++)
+    for(int i = 0; i < numOfEmployees; i++)
     {
         cout << "Information for Employee "<<i+1<<endl;
         cout << "Employee ID : "<<emps[i].employeeID<<endl;
@@ -47,7 +50,7 @@ int main()
     cin >> empID;
 
     bool found = false;
-    for(int i = 0; i < 3; i++)
+    for(int i = 0; i < numOfEmployees; i++)
     {
         if(empID == emps[i].employeeID)
         {
