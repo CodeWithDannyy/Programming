@@ -17,7 +17,7 @@ int main()
     int exit = 1;
     do
     {
-        cout << "1. Add Book"<<endl;
+        cout << "\n1. Add Book"<<endl;
         cout << "2. Remove Book"<<endl;
         cout << "3. Search for book"<<endl;
         cout << "4. Display All Available books"<<endl;
@@ -36,7 +36,7 @@ int main()
                 delete[] books;
                 books = temp;
 
-                cout << "Enter Information for Book "<< numOfBooks+1 <<endl ;
+                cout << "\nEnter Information for Book "<< numOfBooks+1 <<endl ;
             
                 cout << "Enter Book ID : ";
                 cin >> books[numOfBooks].bookID;
@@ -63,7 +63,7 @@ int main()
                     break;
                 }
                 int removeID;
-                cout << "Enter Book ID to remove that book : ";
+                cout << "\nEnter Book ID to remove that book : ";
                 cin >> removeID;
                 for(int i = 0 ; i < numOfBooks;i ++)
                 {
@@ -99,7 +99,7 @@ int main()
                 }
 
                 int searchID;
-                cout << "Enter Book ID to search that book: ";
+                cout << "\nEnter Book ID to search that book: ";
                 cin >> searchID;
 
                 for (int i = 0; i < numOfBooks; i++)
@@ -128,6 +128,7 @@ int main()
                     cout << "There are no books in the list" << endl;
                     break;
                 }
+                
                 cout << "All Available Books " << endl;
                 for (int i = 0; i < numOfBooks; i++)
                 {
