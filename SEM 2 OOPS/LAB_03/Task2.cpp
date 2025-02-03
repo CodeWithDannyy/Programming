@@ -60,7 +60,7 @@ class TeaMug
         else
         {
             cout << "Refilling Tea..."<< endl;
-            currentFillLevel += 10;
+            currentFillLevel += 15;
         }
     }
 
@@ -75,5 +75,16 @@ class TeaMug
 
 int main()
 {
-
+    TeaMug cupOfTea;
+    cupOfTea.setValues("Lipton","White",100,50);
+    cout << "Brand : " << cupOfTea.getBrand() << endl;
+    cout << "Color : " << cupOfTea.getColor() << endl;
+    cout << "Capcity : " << cupOfTea.getCapacity() << endl;
+    cout << "Current Fill Level : " << cupOfTea.getCurrentFillLevel() << endl;
+    cout << "Time to sip...." << endl;
+    cout << "Checking if the mug is empty or not : " << ((cupOfTea.checkForEmptyMug()) ? "Mug is Empty" : "Mug is not Empty") << endl;
+    cupOfTea.sipTea();
+    cout << "Current Fill Level After sipping tea : " << cupOfTea.getCurrentFillLevel() << endl;
+    cupOfTea.refill();
+    cout << "Current Fill Level After refilling tea mug : " << cupOfTea.getCurrentFillLevel() << endl;
 }
