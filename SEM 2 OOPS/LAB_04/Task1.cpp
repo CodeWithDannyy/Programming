@@ -25,15 +25,8 @@ class Book
 
         void purchase(int quantity)
         {
-            if(quantity > stock)
-            {
-                cout << "Error! Stock Size is " << stock << endl;  
-            }
-            else
-            {
-                stock -= quantity;
-                cout << quantity << " books purchased " << endl;
-            }
+            stock -= quantity;
+            cout << quantity << " books purchased " << endl;
 
             if(stock < 5)
             {
