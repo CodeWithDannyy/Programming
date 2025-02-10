@@ -88,11 +88,12 @@ int main()
     Book book2("Learning C",30.00, 100);
     Book book3 = book2;
 
-    book3.updateBookDetails("Learning Java", 20.00, 150);
+    book3.updateBookDetails("Learning Java Script", 20.00, 150);
 
     book1.showDetails();
     book2.showDetails();
     book3.showDetails();
+
     
     return 0;
 }
