@@ -50,6 +50,11 @@ class Book
             return price;
         }
 
+        double CalculatingFinalPrice(int quantity) 
+        {
+            return applyDiscount(quantity) * quantity;
+        }
+
         void purchase(int quantity)
         {
             if(quantity > stock)
@@ -59,8 +64,10 @@ class Book
             }
             
             double priceAfterDiscount = applyDiscount(quantity);
+            double totalPrice = CalculatingFinalPrice(quantity);
             stock -= quantity;
             cout << quantity << " books purchased with each book being $" << priceAfterDiscount << endl;
+            cout << "Total Price of " << quantity <<" Books (Title : " << *title << ") : " << totalPrice << endl;
             
             
             if(stock < 5)
@@ -87,17 +94,9 @@ class Book
 
 int main()
 {
-    Book book1;
-    Book book2 = book1;
+    Book book1("Learning C++", 50.00, 30);
 
-    cout << "Updating Book 1 Details " << endl;
-    book1.updateBookDetails("Pride and Prejudice",50.00,15);
-
-    cout << "Book 1 Details" << endl;
-    book1.display();
-
-    cout << "Book 2 Details " << endl;
-    book2.display();
+    book1.purchase(26);
     
     return 0;
 }
