@@ -1,22 +1,23 @@
 #include<iostream>
+#include<iomanip>
 using namespace std;
 
 class Vehicle
 {
     private:
         string model;
-        float rentalPrice;
+        double rentalPrice;
         string requiredLicense;
     
     public:
-        Vehicle(string model, float rentalPrice, string requiredLicense) : model(model), rentalPrice(rentalPrice), requiredLicense(requiredLicense) {}
+        Vehicle(string model, double rentalPrice, string requiredLicense) : model(model), rentalPrice(rentalPrice), requiredLicense(requiredLicense) {}
 
         bool isEligible(string userLicense) { return userLicense == requiredLicense; }
         
         void display()
         {
             cout << "Model: " << model << endl;
-            cout << "Rental Price: " << rentalPrice << endl;
+            cout << "Rental Price: " << fixed << setprecision(2) << rentalPrice << endl;
             cout << "Required License: " << requiredLicense << endl;
         }
 };
@@ -32,7 +33,7 @@ class User
         int userID;
     
     public: 
-        User() : name("Unknown"), age(0), licenseType("Unknown"), contactInformation("Unknown") , userID(userID) {}
+        User() : name("Unknown"), age(0), licenseType("Unknown"), contactInformation("Unknown") , userID(0) {}
 
         User(string name, int age, string licenseType, string contactInformation, int userID) : name(name), age(age), licenseType(licenseType), contactInformation(contactInformation), userID(userID) {}
 
@@ -68,7 +69,7 @@ class RentalSystem
             vehicles = new Vehicle*[maxVehicles];
         }
 
-        void addVehicle(string model, float price, string requiredLicense)
+        void addVehicle(string model, double price, string requiredLicense)
         {
             if(vehicleCount < maxVehicles)
             {
