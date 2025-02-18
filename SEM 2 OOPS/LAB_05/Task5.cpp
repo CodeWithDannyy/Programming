@@ -35,11 +35,11 @@ class TravelAgency
             tourGuides = new tourGuide*[maxGuides];
         }
 
-        void addTourGuide(tourGuide* tourGuide)
+        void addTourGuide(tourGuide *guide)
         {
             if(guideCount < maxGuides)
             {
-                tourGuides[guideCount++] = tourGuide;
+                tourGuides[guideCount++] = guide;
             }
             else
                 cout << "Can't add more tour guides" << endl;
@@ -60,8 +60,6 @@ class TravelAgency
 
         ~TravelAgency()
         {
-            for(int i = 0; i < guideCount; i++)
-                delete tourGuides[i];
             delete[] tourGuides;
         }
 };
