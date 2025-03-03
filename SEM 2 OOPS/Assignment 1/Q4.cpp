@@ -34,7 +34,7 @@ class Student
 
         string getStudentID() const {return studentID;}
 
-        string getStudentIDName() const {return name ; }
+        string getStudentName() const {return name ; }
 
         int getRouteID() const {return routeID;}
 
