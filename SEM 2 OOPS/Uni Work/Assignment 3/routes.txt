@@ -1,0 +1,2 @@
+Route ID, Start Location, End Location, Distance, Type
+101, Fast, Ghulshan, 20, Short Distance
