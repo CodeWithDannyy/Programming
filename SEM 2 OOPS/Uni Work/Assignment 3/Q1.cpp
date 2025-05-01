@@ -419,22 +419,97 @@ class TransportManagementSystem
     TemplateClass<Transporter> transporters;
 
     public:
-        void addUser(User* u) { users.add(u); }
-        void addDriver(Driver* d) { drivers.add(d); }
-        void addRoute(Route* r) { routes.add(r); }
-        void addVehicle(Vehicle* v) { vehicles.add(v); }
-        void addTransporter(Transporter* t) { transporters.add(t); }
+        void addUser(User* u) 
+        { 
+            try 
+            {
+                users.add(u);
+                cout << "User added successfully!" << endl;
+            }
+            catch (const IndexOutOfRangeException& e)
+            {
+                cout << "Error: " << e.what() << endl;
+            }
+        }
+        void addDriver(Driver* d)
+        { 
+            try 
+            {
+                drivers.add(d); 
+                cout << "User added successfully!" << endl;
+            }
+            catch (const IndexOutOfRangeException& e)
+            {
+                cout << "Error: " << e.what() << endl;
+            }
+        }
+        void addRoute(Route* r) 
+        { 
+            try 
+            {
+                routes.add(r);
+                cout << "User added successfully!" << endl;
+            }
+            catch (const IndexOutOfRangeException& e)
+            {
+                cout << "Error: " << e.what() << endl;
+            }
+        }
+        void addVehicle(Vehicle* v) 
+        { 
+            try 
+            {
+                vehicles.add(v); 
+                cout << "User added successfully!" << endl;
+            }
+            catch (const IndexOutOfRangeException& e)
+            {
+                cout << "Error: " << e.what() << endl;
+            }
+        }
+        void addTransporter(Transporter* t) 
+        {
+            try 
+            {
+                transporters.add(t); 
+                cout << "User added successfully!" << endl;
+            }
+            catch (const IndexOutOfRangeException& e)
+            {
+                cout << "Error: " << e.what() << endl;
+            }
+        }
 
         void bookSeat(User* u, Vehicle* v, int seatIndex, string date)
         {
-            if(seatIndex < 0 || seatIndex >= v->getTotalSeats())
+            try 
             {
-                throw IndexOutOfRangeException();
-            }
+                if(seatIndex < 0 || seatIndex >= v->getTotalSeats())
+                {
+                    throw IndexOutOfRangeException();
+                }
 
-            Seat* seat = v->getSeat(seatIndex);
-            Booking* b = new Booking(u, v, seat, date);
-            bookings.add(b);
+                Seat* seat = v->getSeat(seatIndex);
+                Booking* b = new Booking(u, v, seat, date);
+                bookings.add(b);
+                cout << "Booking successful!" << endl;
+            }
+            catch (const IndexOutOfRangeException& e)
+            {
+                cout << "Error: " << e.what() << endl;
+            }
+            catch (const PaymentException& e)
+            {
+                cout << "Error: " << e.what() << endl;
+            }
+            catch (const SeatUnavailableException& e)
+            {
+                cout << "Error: " << e.what() << endl;
+            }
+            catch (const RoleViolationException& e)
+            {
+                cout << "Error: " << e.what() << endl;
+            }
         }
 
         void viewAllUsers()
